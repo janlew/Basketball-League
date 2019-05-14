@@ -2,6 +2,7 @@ package com.league.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "coach")
@@ -12,8 +13,8 @@ public class Coach {
     private int coach_id;
 
     @OneToOne
-    @JoinColumn(name="team_id")
-    private Team team;
+    @JoinColumn(name = "users_id")
+    private Users user;
 
     @Column(name = "name")
     private String name;
@@ -26,13 +27,17 @@ public class Coach {
 
     ///////////////////////
 
+    @OneToOne(mappedBy = "coach")
+    private Team team;
+
     public Coach() {}
 
-    public Coach(Team team, String name, String surname, Date birth) {
-        this.team = team;
+    public Coach(Users user, String name, String surname, Date birth, Team team) {
+        this.user = user;
         this.name = name;
         this.surname = surname;
         this.birth = birth;
+        this.team = team;
     }
 
     public int getCoach_id() {
@@ -43,12 +48,12 @@ public class Coach {
         this.coach_id = coach_id;
     }
 
-    public Team getTeam() {
-        return team;
+    public Users getUser() {
+        return user;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public String getName() {
@@ -74,4 +79,14 @@ public class Coach {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+
 }

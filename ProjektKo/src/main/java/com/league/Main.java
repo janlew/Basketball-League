@@ -1,7 +1,6 @@
 package com.league;
 
-import com.league.model.Roles;
-import com.league.model.Users;
+import com.league.model.*;
 import com.league.utilities.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,21 +22,16 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-//        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        session.beginTransaction();
 //
-//        session.beginTransaction();
-//        Roles role = new Roles();
-//        role.setName("player");
-//        session.save(role);
-//        session.getTransaction().commit();
-//
-//        session.beginTransaction();
-//        Users user = new Users();
-//        user.setUsername("test");
-//        user.setPasswrd("test");
-//        user.setRole(role);
-//        session.save(user);
-//       session.getTransaction().commit();
+//        Team t1 = session.get(Team.class, 1);
+//        System.out.println(t1.getTeamPlayers().get(0).getPlayer().getName());
+
+        Player g1 = session.get(Player.class, 1);
+        System.out.println(g1.getPlayerStats().get(0).getAst());
+       session.getTransaction().commit();
 
         launch(args);
     }

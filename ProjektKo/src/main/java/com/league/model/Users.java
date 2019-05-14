@@ -1,7 +1,7 @@
 package com.league.model;
 
-import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -22,6 +22,9 @@ public class Users {
     private String passwrd;
 
     ///////////////////////
+
+    @OneToMany(mappedBy = "user")
+    private Set<News> news;
 
     public Users () {}
 
@@ -61,5 +64,13 @@ public class Users {
 
     public void setPasswrd(String passwrd) {
         this.passwrd = passwrd;
+    }
+
+    public Set<News> getNews() {
+        return news;
+    }
+
+    public void setNews(Set<News> news) {
+        this.news = news;
     }
 }

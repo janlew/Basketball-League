@@ -1,6 +1,7 @@
 package com.league.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,36 +13,31 @@ public class Team {
     private int team_id;
 
     @OneToOne
-    @JoinColumn(name = "stadium_id")
-    private Stadium stadium;
+    @JoinColumn(name = "coach_id")
+    private Coach coach;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "wins")
-    private int wins;
-
-    @Column(name = "loss")
-    private int loss;
-
     ///////////////////////
 
-    @OneToOne(mappedBy="team")
-    private Coach coach;
+    @OneToMany(mappedBy = "team")
+    private List<Training> trainings;
 
     @OneToMany(mappedBy = "team")
-    private Set<Player> players;
+    private List<TeamPlayers> teamPlayers;
 
+    @OneToMany(mappedBy = "home")
+    private List<Game> homeGames;
+
+    @OneToMany(mappedBy = "away")
+    private List<Game> awayGames;
 
     public Team() {}
 
-    public Team(Stadium stadium, String name, int wins, int loss, Coach coach, Set<Player> players) {
-        this.stadium = stadium;
-        this.name = name;
-        this.wins = wins;
-        this.loss = loss;
+    public Team(Coach coach, String name) {
         this.coach = coach;
-        this.players = players;
+        this.name = name;
     }
 
     public int getTeam_id() {
@@ -52,12 +48,12 @@ public class Team {
         this.team_id = team_id;
     }
 
-    public Stadium getStadium() {
-        return stadium;
+    public Coach getCoach() {
+        return coach;
     }
 
-    public void setStadium(Stadium stadium) {
-        this.stadium = stadium;
+    public void setCoach(Coach coach) {
+        this.coach = coach;
     }
 
     public String getName() {
@@ -68,36 +64,35 @@ public class Team {
         this.name = name;
     }
 
-    public int getWins() {
-        return wins;
+    public List<Training> getTrainings() {
+        return trainings;
     }
 
-    public void setWins(int wins) {
-        this.wins = wins;
+    public void setTrainings(List<Training> trainings) {
+        this.trainings = trainings;
     }
 
-    public int getLoss() {
-        return loss;
+    public List<TeamPlayers> getTeamPlayers() {
+        return teamPlayers;
     }
 
-    public void setLoss(int loss) {
-        this.loss = loss;
+    public void setTeamPlayers(List<TeamPlayers> teamPlayers) {
+        this.teamPlayers = teamPlayers;
     }
 
-    public Coach getCoach() {
-        return coach;
+    public List<Game> getHomeGames() {
+        return homeGames;
     }
 
-    public void setCoach(Coach coach) {
-        this.coach = coach;
+    public void setHomeGames(List<Game> homeGames) {
+        this.homeGames = homeGames;
     }
 
-    public Set<Player> getPlayers() {
-        return players;
+    public List<Game> getAwayGames() {
+        return awayGames;
     }
 
-    public void setPlayers(Set<Player> players) {
-        this.players = players;
+    public void setAwayGames(List<Game> awayGames) {
+        this.awayGames = awayGames;
     }
-
 }

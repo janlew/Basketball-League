@@ -24,9 +24,10 @@ public class LoginController extends Controller {
         Session session = factory.getCurrentSession();
         session.getTransaction().begin();
         if(checkLoggingIn(login.getText(), password.getText()) == 1) {
-            System.out.println("zalogowano");
+
             logInButton.setOnAction(e ->{
                 try {
+                    System.out.println("zalogowano");
                     changeScene(e, "/mainScene.fxml");
                 } catch (IOException e1) {
                     e1.printStackTrace();

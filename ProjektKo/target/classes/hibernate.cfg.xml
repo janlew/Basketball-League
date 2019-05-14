@@ -12,16 +12,17 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-        <mapping class="com.league.model.Address" />
         <mapping class="com.league.model.Coach" />
         <mapping class="com.league.model.Game" />
+        <mapping class="com.league.model.News" />
         <mapping class="com.league.model.Player" />
         <mapping class="com.league.model.PlayerPosition" />
         <mapping class="com.league.model.PlayerStats" />
         <mapping class="com.league.model.Referee" />
         <mapping class="com.league.model.Roles" />
-        <mapping class="com.league.model.Stadium" />
         <mapping class="com.league.model.Team" />
+        <mapping class="com.league.model.TeamPlayers" />
+        <mapping class="com.league.model.Training" />
         <mapping class="com.league.model.Users" />
     </session-factory>
 </hibernate-configuration>

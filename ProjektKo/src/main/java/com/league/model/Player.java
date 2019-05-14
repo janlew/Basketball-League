@@ -2,6 +2,7 @@ package com.league.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -11,10 +12,6 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "player_id")
     private int player_id;
-
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
 
     @OneToOne
     @JoinColumn(name = "users_id")
@@ -45,12 +42,14 @@ public class Player {
     ///////////////////////
 
     @OneToMany(mappedBy = "player")
-    private Set<PlayerStats> playerStats;
+    private List<TeamPlayers> teamPlayers;
+
+    @OneToMany(mappedBy = "player")
+    private List<PlayerStats> playerStats;
 
     public Player() {}
 
-    public Player(Team team, Users user, PlayerPosition playerPosition, String name, String surname, Date birth, float height, float weight, int jerseyNum) {
-        this.team = team;
+    public Player(Users user, PlayerPosition playerPosition, String name, String surname, Date birth, float height, float weight, int jerseyNum) {
         this.user = user;
         this.playerPosition = playerPosition;
         this.name = name;
@@ -67,14 +66,6 @@ public class Player {
 
     public void setPlayer_id(int player_id) {
         this.player_id = player_id;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
     }
 
     public Users getUser() {
@@ -141,11 +132,21 @@ public class Player {
         this.jerseyNum = jerseyNum;
     }
 
-    public Set<PlayerStats> getPlayerStats() {
+    public List<TeamPlayers> getTeamPlayers() {
+        return teamPlayers;
+    }
+
+    public void setTeamPlayers(List<TeamPlayers> teamPlayers) {
+        this.teamPlayers = teamPlayers;
+    }
+
+    public List<PlayerStats> getPlayerStats() {
         return playerStats;
     }
 
-    public void setPlayerStats(Set<PlayerStats> playerStats) {
+    public void setPlayerStats(List<PlayerStats> playerStats) {
         this.playerStats = playerStats;
     }
+
+
 }
