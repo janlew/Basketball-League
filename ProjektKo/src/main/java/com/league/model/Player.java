@@ -3,7 +3,6 @@ package com.league.model;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "player")
@@ -14,12 +13,12 @@ public class Player {
     private int player_id;
 
     @OneToOne
-    @JoinColumn(name = "users_id")
-    private Users user;
-
-    @OneToOne
     @JoinColumn(name = "playerPosition_id")
     private PlayerPosition playerPosition;
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
 
     @Column(name = "name")
     private String name;
@@ -39,19 +38,25 @@ public class Player {
     @Column(name = "jerseyNum")
     private int jerseyNum;
 
+    @Column(name = "ppg")
+    private String ppg;
+
+    @Column(name = "apg")
+    private String apg;
+
+    @Column(name = "rpg")
+    private String rpg;
+
     ///////////////////////
 
-    @OneToMany(mappedBy = "player")
-    private List<TeamPlayers> teamPlayers;
-
-    @OneToMany(mappedBy = "player")
+    @OneToMany(mappedBy = "player", cascade = {CascadeType.REMOVE})
     private List<PlayerStats> playerStats;
 
     public Player() {}
 
-    public Player(Users user, PlayerPosition playerPosition, String name, String surname, Date birth, float height, float weight, int jerseyNum) {
-        this.user = user;
+    public Player(PlayerPosition playerPosition, Team team, String name, String surname, Date birth, float height, float weight, int jerseyNum) {
         this.playerPosition = playerPosition;
+        this.team = team;
         this.name = name;
         this.surname = surname;
         this.birth = birth;
@@ -66,14 +71,6 @@ public class Player {
 
     public void setPlayer_id(int player_id) {
         this.player_id = player_id;
-    }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
     }
 
     public PlayerPosition getPlayerPosition() {
@@ -132,14 +129,6 @@ public class Player {
         this.jerseyNum = jerseyNum;
     }
 
-    public List<TeamPlayers> getTeamPlayers() {
-        return teamPlayers;
-    }
-
-    public void setTeamPlayers(List<TeamPlayers> teamPlayers) {
-        this.teamPlayers = teamPlayers;
-    }
-
     public List<PlayerStats> getPlayerStats() {
         return playerStats;
     }
@@ -148,5 +137,35 @@ public class Player {
         this.playerStats = playerStats;
     }
 
+    public String getPpg() {
+        return ppg;
+    }
 
+    public void setPpg(String ppg) {
+        this.ppg = ppg;
+    }
+
+    public String getApg() {
+        return apg;
+    }
+
+    public void setApg(String apg) {
+        this.apg = apg;
+    }
+
+    public String getRpg() {
+        return rpg;
+    }
+
+    public void setRpg(String rpg) {
+        this.rpg = rpg;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }

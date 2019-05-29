@@ -18,9 +18,6 @@ public class PlayerStats {
     @JoinColumn(name = "game_id")
     private Game game;
 
-    @Column(name = "mins")
-    private float mins;
-
     @Column(name = "pts")
     private int pts;
 
@@ -34,10 +31,9 @@ public class PlayerStats {
 
     public PlayerStats() {}
 
-    public PlayerStats(Player player, Game game, float mins, int pts, int ast, int reb) {
+    public PlayerStats(Player player, Game game, int pts, int ast, int reb) {
         this.player = player;
         this.game = game;
-        this.mins = mins;
         this.pts = pts;
         this.ast = ast;
         this.reb = reb;
@@ -65,14 +61,6 @@ public class PlayerStats {
 
     public void setGame(Game game) {
         this.game = game;
-    }
-
-    public float getMins() {
-        return mins;
-    }
-
-    public void setMins(float mins) {
-        this.mins = mins;
     }
 
     public int getPts() {

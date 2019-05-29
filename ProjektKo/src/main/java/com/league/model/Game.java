@@ -2,6 +2,7 @@ package com.league.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,8 +36,8 @@ public class Game {
 
     ///////////////////////
 
-    @OneToMany(mappedBy = "game")
-    private Set<PlayerStats> playerStats;
+    @OneToMany(mappedBy = "game", cascade = {CascadeType.REMOVE})
+    private List<PlayerStats> playerStats;
 
     public Game() {}
 
@@ -105,11 +106,11 @@ public class Game {
         this.team2pts = team2pts;
     }
 
-    public Set<PlayerStats> getPlayerStats() {
+    public List<PlayerStats> getPlayerStats() {
         return playerStats;
     }
 
-    public void setPlayerStats(Set<PlayerStats> playerStats) {
+    public void setPlayerStats(List<PlayerStats> playerStats) {
         this.playerStats = playerStats;
     }
 }

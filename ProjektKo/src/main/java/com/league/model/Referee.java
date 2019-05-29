@@ -25,6 +25,11 @@ public class Referee {
 
     public Referee () {}
 
+    public Referee(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
     public Referee(String name, String surname, Set<Game> refereeGames) {
         this.name = name;
         this.surname = surname;

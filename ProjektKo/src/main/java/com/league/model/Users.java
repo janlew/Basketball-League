@@ -1,7 +1,6 @@
 package com.league.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -23,8 +22,8 @@ public class Users {
 
     ///////////////////////
 
-    @OneToMany(mappedBy = "user")
-    private Set<News> news;
+    @OneToOne(mappedBy = "user", cascade = {CascadeType.REMOVE})
+    private Coach coach;
 
     public Users () {}
 
@@ -66,11 +65,11 @@ public class Users {
         this.passwrd = passwrd;
     }
 
-    public Set<News> getNews() {
-        return news;
+    public Coach getCoach() {
+        return coach;
     }
 
-    public void setNews(Set<News> news) {
-        this.news = news;
+    public void setCoach(Coach coach) {
+        this.coach = coach;
     }
 }
