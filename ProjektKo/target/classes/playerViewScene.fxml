@@ -6,38 +6,38 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.PlayerViewSceneController">
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" stylesheets="styles/teamView.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.PlayerViewSceneController">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
-      <Label fx:id="fullname" layoutX="104.0" layoutY="18.0" prefHeight="17.0" prefWidth="140.0" text="Label" />
-      <Label fx:id="teamName" layoutX="366.0" layoutY="18.0" prefHeight="17.0" prefWidth="101.0" text="Label" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+      <Label fx:id="fullname" layoutX="130.0" layoutY="19.0" prefHeight="17.0" prefWidth="140.0" text="Label" />
+      <Label fx:id="teamName" layoutX="351.0" layoutY="19.0" prefHeight="17.0" text="Label" />
 
-      <TableView fx:id="tableView" layoutX="343.0" layoutY="75.0" prefHeight="61.0" prefWidth="229.0">
+      <TableView fx:id="tableView" layoutX="293.0" layoutY="90.0" prefHeight="64.0" prefWidth="227.0">
         <columns>
-          <TableColumn fx:id="tab1" prefWidth="75.0" text="PPG" />
-          <TableColumn fx:id="tab2" prefWidth="75.0" text="APG" />
-            <TableColumn fx:id="tab3" prefWidth="75.0" text="RPG" />
+          <TableColumn fx:id="tab1" editable="false" prefWidth="75.0" sortable="false" text="PPG" />
+          <TableColumn fx:id="tab2" editable="false" prefWidth="75.0" sortable="false" text="APG" />
+            <TableColumn fx:id="tab3" editable="false" prefWidth="75.0" sortable="false" text="RPG" />
         </columns>
       </TableView>
 
-      <TableView fx:id="tableView1" layoutX="186.0" layoutY="136.0" prefHeight="200.0" prefWidth="382.0">
+      <TableView fx:id="tableView1" layoutX="80.0" layoutY="168.0" prefHeight="200.0" prefWidth="440.0">
         <columns>
-          <TableColumn fx:id="tab11" prefWidth="126.0" text="Opponent" />
-          <TableColumn fx:id="tab12" prefWidth="54.0" text="Pts" />
-            <TableColumn fx:id="tab13" prefWidth="58.0" text="Ast" />
-            <TableColumn fx:id="tab14" prefWidth="63.0" text="Reb" />
-            <TableColumn fx:id="tab15" text="Date" />
+          <TableColumn fx:id="tab11" editable="false" prefWidth="120.0" text="Opponent" />
+          <TableColumn fx:id="tab12" editable="false" prefWidth="60.0" text="Pts" />
+            <TableColumn fx:id="tab13" editable="false" prefWidth="60.0" text="Ast" />
+            <TableColumn fx:id="tab14" editable="false" prefWidth="60.0" text="Reb" />
+            <TableColumn fx:id="tab15" editable="false" prefWidth="138.0" text="Date" />
         </columns>
       </TableView>
-      <Label layoutX="21.0" layoutY="67.0" text="Position: " />
-      <Label fx:id="pos" layoutX="70.0" layoutY="67.0" text="pos" />
-      <Label layoutX="21.0" layoutY="89.0" text="Birth:" />
-      <Label fx:id="birth" layoutX="56.0" layoutY="89.0" text="bir" />
-      <Label layoutX="21.0" layoutY="113.0" text="Height: " />
-      <Label fx:id="hei" layoutX="63.0" layoutY="113.0" text="hei" />
-      <Label layoutX="21.0" layoutY="136.0" text="Weight: " />
-      <Label fx:id="wei" layoutX="70.0" layoutY="136.0" text="wei" />
-      <Label fx:id="jersey" layoutX="272.0" layoutY="18.0" text="jersey" />
+      <Label fx:id="p" layoutX="20.0" layoutY="67.0" text="Position: " />
+      <Label fx:id="pos" layoutX="100.0" layoutY="67.0" text="pos" />
+      <Label fx:id="b" layoutX="20.0" layoutY="89.0" text="Birth:" />
+      <Label fx:id="birth" layoutX="70.0" layoutY="89.0" text="bir" />
+      <Label fx:id="h" layoutX="20.0" layoutY="113.0" text="Height: " />
+      <Label fx:id="hei" layoutX="90.0" layoutY="113.0" text="hei" />
+      <Label fx:id="w" layoutX="20.0" layoutY="136.0" text="Weight: " />
+      <Label fx:id="wei" layoutX="90.0" layoutY="136.0" text="wei" />
+      <Label fx:id="jersey" layoutX="194.0" layoutY="81.0" text="jersey" />
 
    </children>
 </AnchorPane>

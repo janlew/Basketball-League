@@ -5,23 +5,24 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.LeagueTableSceneController">
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="800.0" stylesheets="styles/leagueTable.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.LeagueTableSceneController">
    <children>
-      <TableView fx:id="tableView" layoutX="53.0" layoutY="19.0" prefHeight="362.0" prefWidth="527.0">
+      <TableView fx:id="tableView" layoutX="140.0" layoutY="50.0" prefHeight="512.0" prefWidth="520.0">
         <columns>
           <TableColumn fx:id="tab1" editable="false" prefWidth="29.0" sortable="false" text="#" />
           <TableColumn fx:id="tab2" editable="false" prefWidth="162.0" sortable="false" text="Team" />
             <TableColumn fx:id="tab3" editable="false" prefWidth="34.0" sortable="false" text="MP" />
-            <TableColumn fx:id="tab4" editable="false" prefWidth="34.0" sortable="false" text="W" />
-            <TableColumn fx:id="tab5" editable="false" prefWidth="26.0" sortable="false" text="L" />
+            <TableColumn fx:id="tab4" editable="false" prefWidth="34.0" sortable="false" styleClass="win" text="W" />
+            <TableColumn fx:id="tab5" editable="false" prefWidth="26.0" sortable="false" styleClass="lose" text="L" />
             <TableColumn fx:id="tab6" editable="false" minWidth="0.0" prefWidth="48.0" sortable="false" text="TP">
                <columns>
                   <TableColumn fx:id="tab61" editable="false" prefWidth="40.0" sortable="false" text="G" />
                   <TableColumn fx:id="tab62" editable="false" minWidth="5.0" prefWidth="40.0" sortable="false" text="L" />
-               </columns></TableColumn>
+               </columns>
+            </TableColumn>
             <TableColumn fx:id="tab7" editable="false" prefWidth="57.0" sortable="false" text="PCT" />
             <TableColumn fx:id="tab8" editable="false" prefWidth="58.0" sortType="DESCENDING" sortable="false" text="Pts" />
-            <TableColumn fx:id="tab9" editable="false" prefWidth="46.0" sortType="DESCENDING" sortable="false" text="B" />
+            <TableColumn fx:id="tab9" editable="false" prefWidth="38.0" sortType="DESCENDING" sortable="false" />
         </columns>
       </TableView>
       <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />

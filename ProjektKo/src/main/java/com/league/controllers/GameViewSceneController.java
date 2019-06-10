@@ -80,7 +80,8 @@ public class GameViewSceneController extends Controller implements Initializable
         for (PlayerStats ps : allPS) {
             if (ps.getGame().getGame_id() == getGameID()) {
 
-                Button button = new Button("x");
+                Button button = new Button("");
+                button.setId("btn");
                 button.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {

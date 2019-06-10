@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="455.0" prefWidth="675.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.AdminMainSceneController">
+<AnchorPane fx:id="pane" prefHeight="455.0" prefWidth="800.0" stylesheets="styles/adminMain.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.AdminMainSceneController">
    <children>
-      <Button layoutX="600.0" layoutY="14.0" mnemonicParsing="false" onAction="#signOut" text="Sign out" />
-      <MenuButton fx:id="menuButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="MenuButton">
+      <Button fx:id="out" layoutX="739.0" layoutY="2.0" mnemonicParsing="false" onAction="#signOut" text="Sign out" />
+      <MenuButton fx:id="menuButton" layoutX="5.0" layoutY="2.0" mnemonicParsing="false" text="MenuButton">
         <items>
           <MenuItem fx:id="coachItem" mnemonicParsing="false" text="Coach" />
           <MenuItem fx:id="playerItem" mnemonicParsing="false" text="Player" />
@@ -24,116 +24,116 @@
         </items>
       </MenuButton>
 
-      <TableView fx:id="coachTableView" layoutX="5.0" layoutY="55.0" prefHeight="210.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="coachTableView" layoutX="50.0" layoutY="55.0" prefHeight="210.0" prefWidth="700.0" visible="false">
         <columns>
-          <TableColumn fx:id="coachTab1" prefWidth="68.0" text="id" />
-          <TableColumn fx:id="coachTab2" prefWidth="74.0" text="users_id" />
-            <TableColumn fx:id="coachTab3" prefWidth="202.0" text="name" />
-            <TableColumn fx:id="coachTab4" prefWidth="183.0" text="surname" />
-            <TableColumn fx:id="coachTab5" prefWidth="62.0" text="edit" />
-            <TableColumn fx:id="coachTab6" minWidth="0.0" prefWidth="58.0" text="delete" />
+          <TableColumn fx:id="coachTab1" prefWidth="105.0" text="id" />
+          <TableColumn fx:id="coachTab2" prefWidth="105.0" text="users_id" />
+            <TableColumn fx:id="coachTab3" prefWidth="200.0" text="name" />
+            <TableColumn fx:id="coachTab4" prefWidth="200.0" text="surname" />
+            <TableColumn fx:id="coachTab5" prefWidth="40.0" text="" />
+            <TableColumn fx:id="coachTab6" minWidth="0.0" prefWidth="40.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addCoach" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add coach" visible="false" />
+      <Button fx:id="addCoach" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add coach" visible="false" />
 
-      <TableView fx:id="playerTableView" layoutX="5.0" layoutY="55.0" prefHeight="210.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="playerTableView" layoutX="40.0" layoutY="55.0" prefHeight="210.0" prefWidth="720.0" visible="false">
         <columns>
           <TableColumn fx:id="playerTab1" prefWidth="30.0" text="id" />
-          <TableColumn fx:id="playerTab2" prefWidth="49.0" text="pos_id" />
-            <TableColumn fx:id="playerTab3" prefWidth="57.0" text="team_id" />
-            <TableColumn fx:id="playerTab4" prefWidth="82.0" text="name" />
-            <TableColumn fx:id="playerTab5" prefWidth="83.0" text="surname" />
-            <TableColumn fx:id="playerTab6" prefWidth="73.0" text="birth" />
-            <TableColumn fx:id="playerTab7" prefWidth="51.0" text="height" />
-            <TableColumn fx:id="playerTab8" prefWidth="53.0" text="weight" />
-            <TableColumn fx:id="playerTab9" prefWidth="74.0" text="jerseyNum" />
-            <TableColumn fx:id="playerTab10" prefWidth="40.0" text="edit" />
-            <TableColumn fx:id="playerTab11" prefWidth="51.0" text="delete" />
+          <TableColumn fx:id="playerTab2" prefWidth="70.0" text="pos_id" />
+            <TableColumn fx:id="playerTab3" prefWidth="73.0" text="team_id" />
+            <TableColumn fx:id="playerTab4" prefWidth="80.0" text="name" />
+            <TableColumn fx:id="playerTab5" prefWidth="80.0" text="surname" />
+            <TableColumn fx:id="playerTab6" prefWidth="100.0" text="birth" />
+            <TableColumn fx:id="playerTab7" prefWidth="70.0" text="height" />
+            <TableColumn fx:id="playerTab8" prefWidth="70.0" text="weight" />
+            <TableColumn fx:id="playerTab9" prefWidth="50.0" text="no." />
+            <TableColumn fx:id="playerTab10" prefWidth="35.0" text="" />
+            <TableColumn fx:id="playerTab11" prefWidth="35.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addPlayer" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add player" visible="false" />
+      <Button fx:id="addPlayer" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add player" visible="false" />
 
-       <TableView fx:id="gameTableView" layoutX="5.0" layoutY="55.0" prefHeight="210.0" prefWidth="660.0" visible="false">
+       <TableView fx:id="gameTableView" layoutX="50.0" layoutY="55.0" prefHeight="210.0" prefWidth="700.0" visible="false">
         <columns>
-          <TableColumn fx:id="gameTab1" prefWidth="55.0" text="id" />
-          <TableColumn fx:id="gameTab2" text="ref_id" />
-            <TableColumn fx:id="gameTab3" prefWidth="67.0" text="home_id" />
-            <TableColumn fx:id="gameTab4" prefWidth="62.0" text="away_id" />
-            <TableColumn fx:id="gameTab5" prefWidth="141.0" text="termin" />
-            <TableColumn fx:id="gameTab6" prefWidth="75.0" text="home_pts" />
-            <TableColumn fx:id="gameTab7" prefWidth="74.0" text="away_pts" />
-            <TableColumn fx:id="gameTab8" prefWidth="47.0" text="edit" />
-            <TableColumn fx:id="gameTab9" prefWidth="56.0" text="delete" />
+          <TableColumn fx:id="gameTab1" prefWidth="70.0" text="id" />
+          <TableColumn fx:id="gameTab2" prefWidth="70.0" text="ref_id" />
+            <TableColumn fx:id="gameTab3" prefWidth="70.0" text="home_id" />
+            <TableColumn fx:id="gameTab4" prefWidth="70.0" text="away_id" />
+            <TableColumn fx:id="gameTab5" prefWidth="140.0" text="termin" />
+            <TableColumn fx:id="gameTab6" prefWidth="90.0" text="home_pts" />
+            <TableColumn fx:id="gameTab7" prefWidth="90.0" text="away_pts" />
+            <TableColumn fx:id="gameTab8" prefWidth="35.0" text="" />
+            <TableColumn fx:id="gameTab9" prefWidth="35.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addGame" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add game" visible="false" />
+      <Button fx:id="addGame" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add game" visible="false" />
 
-      <TableView fx:id="psTableView" layoutX="8.0" layoutY="48.0" prefHeight="200.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="psTableView" layoutX="70.0" layoutY="55.0" prefHeight="200.0" prefWidth="660.0" visible="false">
         <columns>
-          <TableColumn fx:id="psTab1" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="psTab2" prefWidth="75.0" text="player_id" />
-            <TableColumn fx:id="psTab3" prefWidth="75.0" text="game_id" />
-            <TableColumn fx:id="psTab4" prefWidth="75.0" text="pts" />
-            <TableColumn fx:id="psTab5" prefWidth="75.0" text="ast" />
-            <TableColumn fx:id="psTab6" prefWidth="85.0" text="reb" />
-            <TableColumn fx:id="psTab7" prefWidth="97.0" text="edit" />
-            <TableColumn fx:id="psTab8" prefWidth="93.0" text="delete" />
+          <TableColumn fx:id="psTab1" prefWidth="80.0" text="id" />
+          <TableColumn fx:id="psTab2" prefWidth="100.0" text="player_id" />
+            <TableColumn fx:id="psTab3" prefWidth="100.0" text="game_id" />
+            <TableColumn fx:id="psTab4" prefWidth="90.0" text="pts" />
+            <TableColumn fx:id="psTab5" prefWidth="90.0" text="ast" />
+            <TableColumn fx:id="psTab6" prefWidth="90.0" text="reb" />
+            <TableColumn fx:id="psTab7" prefWidth="40.0" text="" />
+            <TableColumn fx:id="psTab8" prefWidth="40.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addPS" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add player stats" textAlignment="CENTER" visible="false" wrapText="true" />
+      <Button fx:id="addPS" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add player stats" textAlignment="CENTER" visible="false" wrapText="true" />
 
-      <TableView fx:id="refTableView" layoutX="8.0" layoutY="48.0" prefHeight="200.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="refTableView" layoutX="80.0" layoutY="55.0" prefHeight="200.0" prefWidth="640.0" visible="false">
         <columns>
-          <TableColumn fx:id="refTab1" prefWidth="64.0" text="id" />
+          <TableColumn fx:id="refTab1" prefWidth="120.0" text="id" />
           <TableColumn fx:id="refTab2" prefWidth="200.0" text="name" />
             <TableColumn fx:id="refTab3" prefWidth="200.0" text="surname" />
-            <TableColumn fx:id="refTab4" prefWidth="79.0" text="edit" />
-            <TableColumn fx:id="refTab5" prefWidth="105.0" text="delete" />
+            <TableColumn fx:id="refTab4" prefWidth="50.0" text="" />
+            <TableColumn fx:id="refTab5" prefWidth="50.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addRef" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add referee" visible="false" />
+      <Button fx:id="addRef" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add referee" visible="false" wrapText="true" />
 
-      <TableView fx:id="teamTableView" layoutX="8.0" layoutY="48.0" prefHeight="200.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="teamTableView" layoutX="50.0" layoutY="55.0" prefHeight="200.0" prefWidth="700.0" visible="false">
         <columns>
-          <TableColumn fx:id="teamTab1" prefWidth="79.0" text="id" />
-          <TableColumn fx:id="teamTab2" prefWidth="78.0" text="coach_id" />
-            <TableColumn fx:id="teamTab3" prefWidth="311.0" text="name" />
-            <TableColumn fx:id="teamTab4" prefWidth="79.0" text="edit" />
-            <TableColumn fx:id="teamTab5" prefWidth="100.0" text="delete" />
+          <TableColumn fx:id="teamTab1" prefWidth="80.0" text="id" />
+          <TableColumn fx:id="teamTab2" prefWidth="100.0" text="coach_id" />
+            <TableColumn fx:id="teamTab3" prefWidth="300.0" text="name" />
+            <TableColumn fx:id="teamTab4" prefWidth="100.0" text="" />
+            <TableColumn fx:id="teamTab5" prefWidth="100.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addTeam" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add team" visible="false" />
+      <Button fx:id="addTeam" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add team" visible="false" />
 
-      <TableView fx:id="trainingTableView" layoutX="8.0" layoutY="48.0" prefHeight="200.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="trainingTableView" layoutX="50.0" layoutY="55.0" prefHeight="200.0" prefWidth="700.0" visible="false">
         <columns>
-          <TableColumn fx:id="trainingTab1" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="trainingTab2" prefWidth="75.0" text="team_id" />
-            <TableColumn fx:id="trainingTab3" prefWidth="286.0" text="termin" />
-            <TableColumn fx:id="trainingTab4" prefWidth="124.0" text="edit" />
-            <TableColumn fx:id="trainingTab5" prefWidth="83.0" text="delete" />
+          <TableColumn fx:id="trainingTab1" prefWidth="100.0" text="id" />
+          <TableColumn fx:id="trainingTab2" prefWidth="100.0" text="team_id" />
+            <TableColumn fx:id="trainingTab3" prefWidth="300.0" text="termin" />
+            <TableColumn fx:id="trainingTab4" prefWidth="88.0" text="" />
+            <TableColumn fx:id="trainingTab5" prefWidth="88.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addTraining" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add training" visible="false" />
+      <Button fx:id="addTraining" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add training" visible="false" wrapText="true" />
 
-      <TableView fx:id="usersTableView" layoutX="8.0" layoutY="48.0" prefHeight="200.0" prefWidth="660.0" visible="false">
+      <TableView fx:id="usersTableView" layoutX="50.0" layoutY="55.0" prefHeight="200.0" prefWidth="700.0" visible="false">
         <columns>
-          <TableColumn fx:id="userTab1" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="userTab2" prefWidth="75.0" text="role_id" />
-            <TableColumn fx:id="userTab3" prefWidth="151.0" text="username" />
-            <TableColumn fx:id="userTab4" prefWidth="176.0" text="password" />
-            <TableColumn fx:id="userTab5" prefWidth="73.0" text="edit" />
-            <TableColumn fx:id="userTab6" prefWidth="97.0" text="delete" />
+          <TableColumn fx:id="userTab1" prefWidth="100.0" text="id" />
+          <TableColumn fx:id="userTab2" prefWidth="100.0" text="role_id" />
+            <TableColumn fx:id="userTab3" prefWidth="150.0" text="username" />
+            <TableColumn fx:id="userTab4" prefWidth="150.0" text="password" />
+            <TableColumn fx:id="userTab5" prefWidth="87.0" text="" />
+            <TableColumn fx:id="userTab6" prefWidth="87.0" text="" />
         </columns>
       </TableView>
-      <Button fx:id="addUser" layoutX="510.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add user" visible="false" />
+      <Button fx:id="addUser" layoutX="650.0" layoutY="288.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Add user" visible="false" />
 
-      <TextField fx:id="edit1" layoutX="23.0" layoutY="289.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit2" layoutX="146.0" layoutY="288.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit3" layoutX="263.0" layoutY="289.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit4" layoutX="377.0" layoutY="288.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit5" layoutX="23.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit6" layoutX="146.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit7" layoutX="263.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
-      <TextField fx:id="edit8" layoutX="377.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit1" layoutX="50.0" layoutY="289.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit2" layoutX="200.0" layoutY="288.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit3" layoutX="350.0" layoutY="289.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit4" layoutX="500.0" layoutY="288.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit5" layoutX="50.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit6" layoutX="200.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit7" layoutX="350.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
+      <TextField fx:id="edit8" layoutX="500.0" layoutY="340.0" prefHeight="25.0" prefWidth="100.0" visible="false" />
    </children>
 </AnchorPane>

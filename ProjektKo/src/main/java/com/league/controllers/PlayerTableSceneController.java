@@ -63,7 +63,8 @@ public class PlayerTableSceneController extends Controller implements Initializa
         List<Player> allPlayers = this.loadAllData(Player.class, session);
 
         for (Player player : allPlayers) {
-            Button button = new Button("x");
+            Button button = new Button("");
+            button.setId("btn");
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {

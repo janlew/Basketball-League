@@ -5,11 +5,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.LoginController">
+<AnchorPane fx:id="pane" stylesheets="styles/login.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.LoginController">
     <children>
-        <TextField fx:id="login" layoutX="226.0" layoutY="136.0" />
-        <PasswordField fx:id="password" layoutX="226.0" layoutY="175.0" />
-        <Button fx:id="logInButton" layoutX="274.0" layoutY="218.0" mnemonicParsing="false" onAction="#buttonAction" text="Sign in" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+        <TextField fx:id="login" layoutX="210.0" layoutY="136.0" prefWidth="180" />
+        <PasswordField fx:id="password" layoutX="210.0" layoutY="175.0" prefWidth="180"/>
+        <Button fx:id="logInButton" layoutX="210.0" layoutY="218.0" prefWidth="180" mnemonicParsing="false" onAction="#buttonAction" text="Sign in" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
     </children>
 </AnchorPane>

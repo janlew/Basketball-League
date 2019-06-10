@@ -94,7 +94,8 @@ public class TeamViewSceneController extends Controller implements Initializable
                 for (Game game : teamGames) {
                     if (game.getTermin().before(date) && game.getTeam1pts() != 0) {
 
-                        Button button = new Button("x");
+                        Button button = new Button("");
+                        button.setId("btn");
                         button.setOnAction(new EventHandler<ActionEvent>() {
                             @Override
                             public void handle(ActionEvent event) {

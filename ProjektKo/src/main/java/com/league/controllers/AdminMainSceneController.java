@@ -283,14 +283,16 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addCoach.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
                     for (Users u : allUsers) {
                         if (Integer.parseInt(edit1.getText()) == u.getUsers_id()) {
-                            Coach c = new Coach(u, edit2.getText(), edit3.getText());
-                            session1.save(c);
+                            if (edit2.getText().matches("[A-Z][a-z]+") && edit3.getText().matches("[A-Z][a-z]+")) {
+                                Coach c = new Coach(u, edit2.getText(), edit3.getText());
+                                session1.save(c);
+                            }
                         }
                     }
                     session1.getTransaction().commit();
@@ -303,7 +305,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
         });
 
         for (Coach coach : allCoaches) {
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -334,7 +337,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -419,7 +423,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addPlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -428,7 +432,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
                     dat = dat.plusDays(1);
                     for (PlayerPosition pos : allPos) {
                         if (pos.getPlayerPosition_id() == Integer.parseInt(edit1.getText())) {
-                            for (Team team :allTeams) {
+                            for (Team team : allTeams) {
                                 if (team.getTeam_id() == Integer.parseInt(edit2.getText())) {
                                     Player p = new Player(pos, team, edit3.getText(), edit4.getText(), Date.valueOf(dat),
                                             Float.parseFloat(edit6.getText()), Float.parseFloat(edit7.getText()), Integer.parseInt(edit8.getText()));
@@ -451,7 +455,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         for (Player player : allPlayers) {
 
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -504,7 +509,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -583,7 +589,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addGame.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -620,7 +626,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         for (Game game : allGames) {
 
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -670,7 +677,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -752,7 +760,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addPS.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -781,7 +789,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         for (PlayerStats ps : allStats) {
 
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -822,7 +831,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -891,7 +901,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addRef.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -908,7 +918,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         for (Referee referee : allRefs) {
 
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -932,7 +943,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1009,7 +1021,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addTeam.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -1038,7 +1050,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
         });
 
         for (Team team : allTeams) {
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1066,7 +1079,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1145,7 +1159,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addTraining.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -1169,7 +1183,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
         });
 
         for (Training training : allTrainings) {
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1199,7 +1214,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1266,7 +1282,7 @@ public class AdminMainSceneController extends Controller implements Initializabl
 
         addUser.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle (ActionEvent event){
+            public void handle(ActionEvent event) {
                 try {
                     Session session1 = factory.getCurrentSession();
                     session1.getTransaction().begin();
@@ -1288,7 +1304,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
         });
 
         for (Users user : allUsers) {
-            Button editButton = new Button("x");
+            Button editButton = new Button("");
+            editButton.setId("edit");
             editButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
@@ -1319,7 +1336,8 @@ public class AdminMainSceneController extends Controller implements Initializabl
                 }
             });
 
-            Button deleteButton = new Button("x");
+            Button deleteButton = new Button("");
+            deleteButton.setId("delete");
             deleteButton.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {

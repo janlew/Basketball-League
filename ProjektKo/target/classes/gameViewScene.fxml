@@ -6,27 +6,27 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.GameViewSceneController">
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" stylesheets="styles/teamView.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.GameViewSceneController">
    <children>
-      <Label fx:id="homeName" layoutX="179.0" layoutY="18.0" prefHeight="17.0" prefWidth="100.0" text="Label" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
-      <Label fx:id="pts" layoutX="286.0" layoutY="18.0" text="Label" />
-      <Label fx:id="awayName" layoutX="393.0" layoutY="18.0" prefHeight="17.0" prefWidth="100.0" text="Label" />
+      <Label fx:id="homeName" layoutX="170.0" layoutY="18.0" prefHeight="17.0" text="Label" textAlignment="CENTER" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+      <Label fx:id="pts" layoutX="286.0" layoutY="18.0" text="Label" textAlignment="CENTER" />
+      <Label fx:id="awayName" layoutX="393.0" layoutY="18.0" prefHeight="17.0" text="Label" textAlignment="CENTER" />
 
-       <TableView fx:id="tableView" layoutX="35.0" layoutY="168.0" prefHeight="200.0" prefWidth="509.0">
+       <TableView fx:id="tableView" layoutX="70.0" layoutY="168.0" prefHeight="200.0" prefWidth="460.0">
         <columns>
-          <TableColumn fx:id="tab1" prefWidth="75.0" text="Player" />
-          <TableColumn fx:id="tab2" prefWidth="75.0" text="Team" />
-            <TableColumn fx:id="tab3" prefWidth="75.0" text="PTS" />
-            <TableColumn fx:id="tab4" prefWidth="75.0" text="AST" />
-            <TableColumn fx:id="tab5" prefWidth="75.0" text="REB" />
-            <TableColumn fx:id="tab6" prefWidth="75.0" text="x" />
+          <TableColumn fx:id="tab1" editable="false" prefWidth="119.0" text="Player" />
+          <TableColumn fx:id="tab2" editable="false" prefWidth="119.0" text="Team" />
+            <TableColumn fx:id="tab3" editable="false" prefWidth="60.0" text="PTS" />
+            <TableColumn fx:id="tab4" editable="false" prefWidth="60.0" text="AST" />
+            <TableColumn fx:id="tab5" editable="false" prefWidth="60.0" text="REB" />
+            <TableColumn fx:id="tab6" editable="false" prefWidth="40.0" sortable="false" />
         </columns>
       </TableView>
 
-      <Label fx:id="referee" layoutX="179.0" layoutY="60.0" prefHeight="17.0" prefWidth="169.0" text="Label" />
-      <Label layoutX="128.0" layoutY="60.0" text="Referee: " />
-      <Label layoutX="348.0" layoutY="60.0" text="Date: " />
-      <Label fx:id="date" layoutX="386.0" layoutY="60.0" text="Label" />
+      <Label fx:id="referee" layoutX="160.0" layoutY="117.0" prefHeight="17.0" prefWidth="169.0" text="Label" />
+      <Label fx:id="ref" layoutX="70.0" layoutY="117.0" text="Referee: " />
+      <Label fx:id="dat" layoutX="70.0" layoutY="85.0" text="Date: " />
+      <Label fx:id="date" layoutX="135.0" layoutY="85.0" text="Label" />
    </children>
 </AnchorPane>

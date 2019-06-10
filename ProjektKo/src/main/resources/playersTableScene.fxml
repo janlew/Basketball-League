@@ -5,18 +5,18 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.PlayerTableSceneController">
-   <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
-      <TableView fx:id="tableView" layoutX="60.0" layoutY="13.0" prefHeight="380.0" prefWidth="534.0">
-        <columns>
-          <TableColumn fx:id="tab1" prefWidth="182.0" text="fullname" />
-          <TableColumn fx:id="tab2" minWidth="0.0" prefWidth="81.0" text="PPG" />
-            <TableColumn fx:id="tab3" minWidth="3.0" prefWidth="76.0" text="APG" />
-            <TableColumn fx:id="tab4" prefWidth="73.0" text="RPG" />
-            <TableColumn fx:id="tab5" text="Team" />
-            <TableColumn fx:id="tab6" prefWidth="41.0" text="x" />
-        </columns>
-      </TableView>
-   </children>
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="800.0" stylesheets="styles/resultsTable.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.PlayerTableSceneController">
+    <children>
+        <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+        <TableView fx:id="tableView" layoutX="140.0" layoutY="50.0" prefHeight="500.0" prefWidth="520.0">
+            <columns>
+                <TableColumn fx:id="tab1" editable="false" prefWidth="202.0" text="fullname" />
+                <TableColumn fx:id="tab2" editable="false" prefWidth="52.0" text="PPG" />
+                <TableColumn fx:id="tab3" editable="false" prefWidth="52.0" text="APG" />
+                <TableColumn fx:id="tab4" editable="false" prefWidth="52.0" text="RPG" />
+                <TableColumn fx:id="tab5" editable="false" prefWidth="120.0" text="Team" />
+                <TableColumn fx:id="tab6" editable="false" prefWidth="40.0" sortable="false" text="" />
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>

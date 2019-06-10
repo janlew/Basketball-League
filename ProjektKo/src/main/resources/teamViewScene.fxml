@@ -6,34 +6,34 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="403.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.TeamViewSceneController">
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="900.0" stylesheets="styles/teamView.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.TeamViewSceneController">
    <children>
 
-      <TableView fx:id="tableView" layoutX="35.0" layoutY="127.0" prefHeight="251.0" prefWidth="444.0">
+      <TableView fx:id="tableView" layoutX="30.0" layoutY="150.0" prefHeight="295.0" prefWidth="490.0">
         <columns>
-          <TableColumn fx:id="tab1" editable="false" prefWidth="145.0" sortable="false" text="Home" />
-          <TableColumn fx:id="tab2" editable="false" prefWidth="30.0" sortable="false" text="pts" />
-            <TableColumn fx:id="tab3" editable="false" prefWidth="30.0" sortable="false" text="pts" />
-            <TableColumn fx:id="tab4" editable="false" prefWidth="145.0" sortable="false" text="Away" />
-            <TableColumn fx:id="tab5" editable="false" prefWidth="69.0" text="Date" />
-            <TableColumn fx:id="tab6" editable="false" prefWidth="23.0" text="x" />
+          <TableColumn fx:id="tab1" editable="false" prefWidth="129.0" text="Home" />
+          <TableColumn fx:id="tab2" editable="false" prefWidth="40.0" text="pts" />
+            <TableColumn fx:id="tab3" editable="false" prefWidth="40.0" text="pts" />
+            <TableColumn fx:id="tab4" editable="false" prefWidth="129.0" text="Away" />
+            <TableColumn fx:id="tab5" editable="false" prefWidth="110.0" text="Date" />
+            <TableColumn fx:id="tab6" editable="false" prefWidth="40.0" sortable="false" text="" />
         </columns>
       </TableView>
 
       <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
-      <Label fx:id="teamName" layoutX="300.0" layoutY="31.0" prefHeight="17.0" prefWidth="183.0" text="Label" />
-      <Label layoutX="41.0" layoutY="69.0" text="Coach: " />
-      <Label fx:id="coachName" layoutX="80.0" layoutY="69.0" prefHeight="17.0" prefWidth="87.0" text="Label" />
+      <Label fx:id="teamName" layoutX="300.0" layoutY="15.0" prefHeight="17.0" text="Label" />
+      <Label fx:id="coachLabel" layoutX="40.0" layoutY="69.0" text="Coach: " />
+      <Label fx:id="coachName" layoutX="114.0" layoutY="69.0" prefHeight="17.0" text="Label" />
 
-      <TableView fx:id="tableView1" layoutX="508.0" layoutY="127.0" prefHeight="251.0" prefWidth="230.0">
+      <TableView fx:id="tableView1" layoutX="540.0" layoutY="150.0" prefHeight="250.0" prefWidth="330.0">
         <columns>
-          <TableColumn fx:id="tab11" editable="false" prefWidth="75.0" sortable="false" text="Home" />
-          <TableColumn fx:id="tab12" editable="false" prefWidth="75.0" sortable="false" text="Away" />
-            <TableColumn fx:id="tab13" editable="false" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="tab11" editable="false" prefWidth="114.0" text="Home" />
+          <TableColumn fx:id="tab12" editable="false" prefWidth="114.0" text="Away" />
+            <TableColumn fx:id="tab13" editable="false" prefWidth="100.0" text="Date" />
         </columns>
       </TableView>
-      <Label layoutX="35.0" layoutY="110.0" text="Team results:" />
-      <Label layoutX="508.0" layoutY="110.0" text="Scheduled games:" />
+      <Label fx:id="tr" layoutX="40.0" layoutY="120.0" text="Team results:" />
+      <Label fx:id="sg" layoutX="580.0" layoutY="120.0" text="Scheduled games:" />
 
    </children>
 </AnchorPane>

@@ -5,17 +5,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.ResultsTableSceneController">
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="800.0" stylesheets="styles/resultsTable.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.league.controllers.ResultsTableSceneController">
    <children>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
-      <TableView fx:id="tableView" layoutX="61.0" layoutY="11.0" prefHeight="379.0" prefWidth="530.0">
+      <Button fx:id="backButton" layoutY="2.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back" />
+       <TableView fx:id="tableView" layoutX="140.0" layoutY="50.0" prefHeight="500.0" prefWidth="520.0">
         <columns>
-          <TableColumn fx:id="tab1" prefWidth="137.0" text="Home" />
-          <TableColumn fx:id="tab2" prefWidth="59.0" text="pts" />
-            <TableColumn fx:id="tab3" prefWidth="64.0" text="pts" />
-            <TableColumn fx:id="tab4" prefWidth="131.0" text="Away" />
-            <TableColumn fx:id="tab5" prefWidth="110.0" text="Date" />
-            <TableColumn fx:id="tab6" minWidth="6.0" prefWidth="28.0" text="x" />
+          <TableColumn fx:id="tab1" editable="false" prefWidth="130.0" sortable="false" text="Home" />
+          <TableColumn fx:id="tab2" editable="false" prefWidth="54.0" sortable="false" text="pts" />
+            <TableColumn fx:id="tab3" editable="false" prefWidth="54.0" sortable="false" text="pts" />
+            <TableColumn fx:id="tab4" editable="false" prefWidth="131.0" sortable="false" text="Away" />
+            <TableColumn fx:id="tab5" editable="false" prefWidth="110.0" text="Date" />
+            <TableColumn fx:id="tab6" editable="false" minWidth="6.0" prefWidth="39.0" sortable="false" text="" />
         </columns>
       </TableView>
    </children>

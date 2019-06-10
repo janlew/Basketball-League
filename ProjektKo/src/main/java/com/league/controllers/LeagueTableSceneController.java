@@ -13,9 +13,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
@@ -87,7 +90,10 @@ public class LeagueTableSceneController extends Controller implements Initializa
         int i = 1;
         for (Team team : allTeams) {
 
-            Button button = new Button("x");
+            Button button = new Button("");
+            button.setId("btn");
+            button.setPrefWidth(30);
+
             button.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
